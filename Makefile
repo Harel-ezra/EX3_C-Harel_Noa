@@ -2,12 +2,17 @@ cc=gcc
 AR=ar
 FLAGS= -Wall 
 
-all: firstTargil.o secondTargil.o
+all: targil1 targil2
 
-firstTargil.o: isort.c  
+targil1: isort.o 
+		$(CC) $(FLAGS) -o targil1 isort.o 
+targil2: txtfind.o 
+		$(CC) $(FLAGS) -o targil2 txtfind.o
+
+isort.o: isort.c  
 	$(CC) $(FLAGS) -c isort.c 
 
-secondTargil.o: txtfind.c
+txtfind.o: txtfind.c
 	$(CC) $(FLAGS) -c txtfind.c 
 
 clean:
