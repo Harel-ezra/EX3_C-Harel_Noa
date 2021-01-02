@@ -1,6 +1,8 @@
 #include <stdio.h>
 #define SIZE 50
 
+/* move the number one step right, i numbers 
+*/
 int shift_element(int *arr, int i)
 {
     for (int j = i; j > 0; j--)
@@ -34,11 +36,11 @@ int main()
 {
 
     int array[SIZE];
-    for (int i = 0; i < SIZE; i++) //  add end of file
+    for (int i = 0; i < SIZE; i++) 
     {
         scanf("%d", (array + i));
     }
-
+// sort by insertion sort
     insertion_sort(array, SIZE);
 
     for (int i = 0; i < SIZE; i++)
