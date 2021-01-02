@@ -5,6 +5,7 @@
 #define LINE 256
 #define WORD 30
 
+// print all line with exactly similar word
 void print_lines(char *searchWord)
 {
     char line[LINE];
@@ -36,7 +37,8 @@ void print_lines(char *searchWord)
         }
     }
 }
-// check if this is a smae word less one letter 0=false, nun 0=true
+
+// check if this is a same word less one letter 0 = false, not 0 = true
 bool isSame(char *searchWord, char *word)
 {
     int j = 0;
@@ -64,7 +66,7 @@ bool isSame(char *searchWord, char *word)
     }
     return true;
 }
-
+// print the similar words
 void print_similar_words(char *searchWord)
 {
     char line[LINE];
@@ -83,6 +85,7 @@ void print_similar_words(char *searchWord)
                 j++;
             }
             word[k] = '\0';
+            // check it is a similar words and print if it is
             if (isSame(searchWord, word))
             {
                 printf("%s\n", word);
@@ -96,12 +99,13 @@ void print_similar_words(char *searchWord)
     }
 }
 
+// main progrem
 int main()
 {
     char letter;
     char searchWord[WORD];
     char line[LINE];
-
+    // get the first line
     fgets(line, LINE, stdin);
 
     int i = 0;
@@ -121,6 +125,8 @@ int main()
     letter = line[i];
 
     //fits to case a or b
+    // a - print the line with the similar words
+    // b- print similar words
     switch (letter)
     {
     case 'a':
@@ -133,7 +139,7 @@ int main()
         break;
 
     default:
-        printf("error/n");
+        printf("error\n");
         break;
     }
 }

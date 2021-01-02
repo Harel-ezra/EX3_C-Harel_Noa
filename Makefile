@@ -16,6 +16,6 @@ txtfind.o: txtfind.c
 	$(CC) $(FLAGS) -c txtfind.c 
 
 clean:
-	rm -f *.o *.a *.so *.out progmains progmaind
+	rm -f *.o *.a *.so *.out *targil1 *targil2 progmains progmaind
 
 .PHONY: clean all
